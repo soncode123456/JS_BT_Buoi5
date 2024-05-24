@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <style>
+        .hidden {
+          display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" style="margin-bottom: 500px;">
+        <div class="form-group">
+            <h3>Bài tập 1: Quản lý tuyển sinh</h3>
+            <div class="alert alert-warning">
+                Trong kỳ tuyển sinh, một thí sinh sẽ trúng tuyển nếu có điểm tổng kết lớn hơn hoặc bằng điểm chuẩn và không có môn nào điểm 0 <br>
+                - Điểm tổng kết là tổng điểm của 3 môn thi và điểm ưu tiên <br>
+                - Điểm ưu tiên bao gồm điểm ưu tiên theo khu vực và điểm ưu tiên theo đối tượng
+            </div>
+            <div class="row d-flex flex-wrap">
+                <div class="col-4">
+                    <label for="">Điểm chuẩn:</label>
+                    <input class="form-control w-50" type="number" id="diemChuan" required><br><br>
+                </div>
+                <div class="col-4">
+                    <label for="">Khu vực:</label>
+                    <select class="form-select w-50" type="text" id="khuVuc" dropdown>
+                        <option value="Chọn khu vực">Chọn khu vực</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                    </select><br><br>
+                </div>
+                <div class="col-4">
+                    <label for="">Đối tượng:</label>
+                    <select class="form-select w-50" type="numnber" id="doiTuong" dropdown>
+                        <option value="Chọn đối tượng">Chọn đối tượng</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select><br><br>
+                </div>
+                <div class="col-4">
+                    <label for="">Điểm môn 1:</label>
+                    <input class="form-control w-50" type="number" id="diemMon1" required><br><br>
+                </div>
+                <div class="col-4">
+                    <label for="">Điểm môn 2:</label>
+                    <input class="form-control w-50" type="number" id="diemMon2" required><br><br>
+                </div>
+                <div class="col-4">
+                    <label for="">Điểm môn 3:</label>
+                    <input class="form-control w-50" type="number" id="diemMon3" required><br><br>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-warning" id="btnKetQua">Kết Quả</button>
+        <div class="alert alert-warning mt-2" id="ketQua"></div>
+
+
+
+        <hr><br>
+        <h3>Bài tập 2: Viết hàm tính tiền điện từ số KW</h3>
+        <div class="alert alert-danger">
+            <p>50kW: 500d</p>
+            <p>50kW tiếp: 650d</p>
+            <p>100kW tiếp: 850d</p>
+            <p>150kW tiếp: 1100d</p>
+            <p>còn lại: 1300d</p>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-6 mb-3">
+                    <input
+                        type="text"
+                        class="form-control w-50"
+                        name=""
+                        id="nhapHoVaTen"
+                        aria-describedby="helpId"
+                        placeholder="Nhập họ tên"
+                    />
+                </div>
+                <div class="col-6 mb-3">
+                    <input
+                        type="text"
+                        class="form-control w-50"
+                        name=""
+                        id="soKW"
+                        aria-describedby="helpId"
+                        placeholder="Nhập số kw"
+                    />
+                </div>
+            </div>
+        </div>
+        <button id="btnTinhTien" class="btn btn-danger">Tính tiền</button>
+        <div class="alert alert-danger mt-3" id="ketQuaBai2"></div>
+
+        <hr><br>
+        <h3>BÀI TẬP 3: TÍNH THUẾ THU NHẬP CÁ NHÂN</h3>
+        <div class="alert alert-info">
+            Viết chương trình nhập vào thông tin của 1 cá nhân (Họ tên, tổng thu nhập năm, số người phụ thuộc). Tính và xuất thuế thu nhập cá nhân phải trả theo quy định sau: <br>
+            ❖ Thu nhập chịu thuế = Tổng thu nhập năm - 4tr- Số người phụ thuộc * 1.6tr
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-4">
+                    <input type="text" class="form-control " id="nhapHoTen" placeholder="Nhập họ tên">
+                </div>
+                <div class="col-4">
+                    <input type="number" class="form-control " id="tongThuNhapNam" placeholder="Tổng thu nhập năm">
+                </div>
+                <div class="col-4">
+                    <input type="number" class="form-control " id="soNguoiPhuThuoc" placeholder="Số người phụ thuộc">
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-primary mt-3" id="btnTinhTienThue">Tính tiền thuế</button>
+        <div class="alert alert-info mt-3" id="ketQua3"></div>
+
+
+        <hr><br>
+        <h3>BÀI TẬP 4: TÍNH TIỀN CÁP</h3>
+        <div class="alert alert-success">
+            ❖ Viết chương trình tính hóa đơn khách hàng cho một công ty cáp. Có 2 loại khách hàng:
+            Nhà dân và doanh nghiệp. Có 2 mức giá tính tiền cáp: <br>
+            1. Nhà dân: <br>
+            • Phí xử lý hóa đơn: 4.5$ <br>
+            • Phí dịch vụ cơ bản: 20.5$ <br>
+            • Thuê kênh cao cấp: 7.5$ / kênh <br>
+            2. Doanh nghiệp <br>
+            • Phí xử lý hóa đơn: 15$ <br>
+            • Phí dịch vụ cơ bản: 75$ cho tổng 10 kết nối đầu, mỗi kết nối thêm 5$ / kết nối <br>
+            • Thuê kênh cao cấp: 50$ / kênh <br>
+            ❖ Chương trình cho phép nhập vào Mã khách hàng, loại khách hàng, số kết nối, số kênh cao cấp. Nếu chọn loại khách hàng là Doanh nghiệp ô nhập số kết nối sẽ hiện lên, nếu chọn loại khách hàng là nhà dân thì ô nhập kết nối sẽ ẩn đi hoặc disabled
+        </div>
+        <div class="form-group">
+            <div class="row d-flex flex-wrap">
+                <div class="col-4">
+                    <select class="form-select w-50" type="text" id="loaiKhachHang">
+                        <option value="Loại khách hàng">Loại khách hàng</option>
+                        <option value="Nhà dân">Nhà dân</option>
+                        <option value="Doanh nghiệp">Doanh nghiệp</option>
+                    </select> <br><br>
+                </div>
+                <div class="col-4">
+                    <input class="form-control w-50" type="text" id="nhapMaKhachHang" placeholder="Nhập mã khách hàng"><br><br>
+                </div>
+                <div class="col-4">
+                    <input class="form-control w-50"  type="number" id="soKenhCaoCap" placeholder="Số kênh cao cấp"><br><br>
+                </div>
+                <div class="col-4">
+                    <section id="phanKetNoi" class="hidden">
+                        <input class="form-control w-50" type="number" id="soKetNoi" placeholder="Số kết nối"><br><br>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-success" id="btnTinhTienCap">Tính tiền cáp</button>
+        <div class="alert alert-success mt-3" id="ketQua4"></div>
+        
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
+    <script type="module" src="./index.js"></script>
+</body>
+</html>
