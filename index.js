@@ -17,10 +17,10 @@ document.getElementById('btnKetQua').onclick = function(e) {
 
     
     //output: 
-    // let tongDiem = 0;
+    let tongDiem = 0;
 
     //process:
-    let tongDiem = kiemTraDauRot(diemChuan,khuVuc,doiTuong,diemMon1,diemMon2,diemMon3);
+    tongDiem = kiemTraDauRot(diemChuan,khuVuc,doiTuong,diemMon1,diemMon2,diemMon3);
 
     // document.getElementById('ketQua').innerHTML = tongDiem;
 };
@@ -111,6 +111,9 @@ document.getElementById('btnTinhTienCap').onclick = function (e) {
     // output: number
     let tienCap = tinhHoaDonTienCap (loaiKhachHang, soKenhCaoCap, soKetNoi);
 
-    document.getElementById('ketQua4').innerHTML = `Mã khách hàng: ${nhapMaKhachHang}; Tiền cáp: $${tienCap.toLocaleString()}`;
+    document.getElementById('ketQua4').innerHTML = `Mã khách hàng: ${nhapMaKhachHang}; Tiền cáp: ${tienCap.toLocaleString('en-US', {
+        style: 'currency',
+        currency: 'USD',
+      })}`;
     
 }
