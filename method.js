@@ -44,13 +44,6 @@ export function kiemTraDauRot(diemChuan, khuVuc, doiTuong, diemMon1, diemMon2, d
    
     tongDiem = diemKhuVuc + diemDoiTuong + diemMon1 + diemMon2 + diemMon3 ;
 
-    // Kiểm tra kết quả
-    if(tongDiem >= diemChuan) {
-        document.getElementById('ketQua').innerHTML = `Bạn đã đậu. Tổng điểm: ${tongDiem} `;
-    } else{
-        document.getElementById('ketQua').innerHTML = `Bạn đã rớt. Tổng điểm: ${tongDiem} `;
-    }
-
     //lệnh xuất output
     return tongDiem; //Lệnh kết thúc hàm và trả ra return
 }

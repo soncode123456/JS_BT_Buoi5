@@ -23,6 +23,12 @@ document.getElementById('btnKetQua').onclick = function(e) {
     tongDiem = kiemTraDauRot(diemChuan,khuVuc,doiTuong,diemMon1,diemMon2,diemMon3);
 
     // document.getElementById('ketQua').innerHTML = tongDiem;
+    // Kiểm tra kết quả
+    if(tongDiem >= diemChuan) {
+        document.getElementById('ketQua').innerHTML = `Bạn đã đậu. Tổng điểm: ${tongDiem} `;
+    } else{
+        document.getElementById('ketQua').innerHTML = `Bạn đã rớt. Tổng điểm: ${tongDiem} `;
+    }
 };
 
 
@@ -46,7 +52,7 @@ document.getElementById('btnTinhTien').onclick = function (e) {
     // process 
     tongTienDien = tinhTienDien(soKW); 
 
-    document.getElementById('ketQuaBai2').innerHTML = `Họ tên: ${nhapHoVaTen} ; Tiền điện cần phải trả ${tongTienDien.toLocaleString()} VND`;
+    document.getElementById('ketQuaBai2').innerHTML = `Họ tên: ${nhapHoVaTen} ; Bạn đã sử dụng ${soKW}KW tiền điện cần phải trả: ${tongTienDien.toLocaleString()} VND`;
 }
 
 
@@ -105,7 +111,7 @@ document.getElementById('btnTinhTienCap').onclick = function (e) {
     if (loaiKhachHang === 'Loại khách hàng' || loaiKhachHang === '') {
         document.getElementById('ketQua4').innerHTML = 'Mã khách hàng: ; Tiền cáp: $0.00';
         alert('Hãy chọn loại khách hàng');
-        return; // Dừng lại để người dùng chọn loại khách hàng
+        return loaiKhachHang; // Dừng lại để người dùng chọn loại khách hàng
     }
 
     // output: number
